@@ -1,188 +1,198 @@
+html {
+    box-sizing: border-box;
+}
+
+* {
+    box-sizing: inherit;
+    margin: 0;
+    padding: 0;
+}
+
 body {
-	margin: 0;
-	height: 100vh;
-	background-color: #dfdfdf;
-	display: flex;
-	justify-content: center;
-	align-items: center;
-	flex-direction: column;
-	font-family: "Tahoma", "Verdana", sans-serif;
-	font-size: 10px;
+    width: 100%;
+    min-height: 100vh;
+    padding: 3rem;
+    background-color: #dfdfdf;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    font-family: "Tahoma", "Verdana", sans-serif;
+    font-size: 10px;
 }
 
 h1 {
-	margin-top: 0;
-	text-align: center;
-	font-size: 2vw;
-	color: #004172bf;
+    margin-top: 0;
+    margin-bottom: 1%;
+    text-align: center;
+    font-size: 2vw;
+    color: #004172bf;
 }
 
 .slider {
-	width: 53vw;
-	display: flex;
-	justify-content: space-between;
-	align-items: center;
-	flex-wrap: wrap;
-	background-color: #2e2f33c4;
-	border: 0;
-	border-radius: 3%;
+    width: 41vw;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    background-color: #2e2f33c4;
+    border: 0;
+    border-radius: 3%;
     padding: 2%;
 }
 
 .slider__images {
-	order: 1;
-	height: 34vw;
-	width: 100%;
-	overflow: hidden;
-	border-radius: 1%;
-	box-shadow: rgba(0, 0, 0, 0.4) 0px 2px 4px, rgba(0, 0, 0, 0.3) 0px 7px 13px -3px;
-margin-bottom: 5%;}
+    order: 1;
+    height: 34vw;
+    width: 100%;
+    overflow: hidden;
+    border-radius: 1%;
+}
 
 .slider__image {
-	display: block;
-	width: 100%;
-	height: 100%;
-	opacity: 0;
+    display: block;
+    width: 100%;
+    height: 100%;
+    visibility: hidden;
     transition: transform 0.3s;
 }
 
 .slider__info {
-	order: 2;
-	overflow: hidden;
-	margin-right: auto;
-	width: 60%;
-	height: 8vw;
+    order: 2;
+    overflow: hidden;
+    margin-right: auto;
+    width: 60%;
+    height: 5vw;
     transition: transform 0.3s;
-    margin-top: 6%;
+    margin-top: 3%;
 }
 
 .slider__text {
-	margin: 0;
-	display: block;
-	font-size: 2vw;
-	line-height: 2.5vw;
-	height: inherit;
-	opacity: 0;
-	color: #dfdfdf;
+    margin: 0;
+    display: block;
+    font-size: 1.5vw;
+    line-height: 2.0vw;
+    height: inherit;
+    visibility: hidden;
+    color: #dfdfdf;
 }
 
 input[type="radio"] {
-	display: none;
+    display: none;
 }
 
 .label {
-	order: 3;
-	width: 2vw;
-	height: 2vw;
-	display: flex;
-	justify-content: center;
-	align-items: center;
-	cursor: pointer;
+    order: 3;
+    width: 2vw;
+    height: 2vw;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
     padding: 1%;
 }
 
 .dot {
-	box-sizing: border-box;
-	display: inline-block;
-	width: 80%;
-	height: 80%;
-	border-radius: 50%;
-	cursor: pointer;
-	background-color: #67c2eebf;
-	transition: all 0.5s;
+    box-sizing: border-box;
+    display: inline-block;
+    width: 80%;
+    height: 80%;
+    border-radius: 50%;
+    cursor: pointer;
+    background-color: #67c2eebf;
+    transition: all 0.5s;
 }
 
-
 .label:hover .dot {
-	background-color: #fff;
+    background-color: #fff;
 }
 
 .label:active .dot {
-	background-color: rgb(105, 105, 105);
+    background-color: rgb(105, 105, 105);
 }
 
-input[type="radio"]:checked + .label * {
-	background-color: #dfdfdf;
-	border: 0.3vw solid #eceae0;
+input[type="radio"]:checked+.label * {
+    background-color: #dfdfdf;
+    border: 0.3vw solid #eceae0;
 }
 
-input[type="radio"]:checked + .label:hover * {
-	background-color: #dfdfdf;
-	border: 0.3vw solid #67c2eebf;
+input[type="radio"]:checked+.label:hover * {
+    background-color: #dfdfdf;
+    border: 0.3vw solid #67c2eebf;
 }
 
-#radio1:checked ~ .slider__images *,
-#radio1:checked ~ .slider__info * {
-	transform: translate(0, 0);
-	opacity: 1;
+#radio1:checked~.slider__images *,
+#radio1:checked~.slider__info * {
+    transform: translate(0, 0);
+    visibility: visible;
 }
 
-#radio2:checked ~ .slider__images *,
-#radio2:checked ~ .slider__info * {
-	transform: translate(0, -100%);
-	opacity: 1;
+#radio2:checked~.slider__images *,
+#radio2:checked~.slider__info * {
+    transform: translate(0, -100%);
+    visibility: visible;
 }
 
-#radio3:checked ~ .slider__images *,
-#radio3:checked ~ .slider__info * {
-	transform: translate(0, -200%);
-	opacity: 1;
+#radio3:checked~.slider__images *,
+#radio3:checked~.slider__info * {
+    transform: translate(0, -200%);
+    visibility: visible;
 }
 
-#radio4:checked ~ .slider__images *,
-#radio4:checked ~ .slider__info * {
-	transform: translate(0, -300%);
-	opacity: 1;
+#radio4:checked~.slider__images *,
+#radio4:checked~.slider__info * {
+    transform: translate(0, -300%);
+    visibility: visible;
 }
 
-#radio5:checked ~ .slider__images *,
-#radio5:checked ~ .slider__info * {
-	transform: translate(0, -400%);
-	opacity: 1;
+#radio5:checked~.slider__images *,
+#radio5:checked~.slider__info * {
+    transform: translate(0, -400%);
+    visibility: visible;
 }
 
 @media (max-width: 700px) {
-	h1 {
-		font-size: 3vw;
-	}
+    h1 {
+        font-size: 3vw;
+    }
 
     .slider__images {
         margin-bottom: 5%;
     }
 
-	.slider__info {
-		order: 3;
-		width: 100%;
-		margin: 2vw 0;
-		height: 4vw;
-	}
+    .slider__info {
+        order: 3;
+        width: 100%;
+        margin: 2vw 0;
+    }
 
-	.slider__text {
-		font-size: 2vw;
-		line-height: 2.5vw;
-	}
+    .slider__text {
+        font-size: 2vw;
+        line-height: 2.5vw;
+    }
 
-	.label {
-		width: 3vw;
-		height: 3vw;
-	}
+    .label {
+        width: 3vw;
+        height: 3vw;
+    }
 
-	input[type="radio"]:checked + .label * {
-		border-width: 0.5vw;
-	}
+    input[type="radio"]:checked+.label * {
+        border-width: 0.5vw;
+    }
 
-	input[type="radio"]:checked + .label:hover * {
-		border-width: 0.5vw;
-	}
+    input[type="radio"]:checked+.label:hover * {
+        border-width: 0.5vw;
+    }
 
-	.slider-image {
-		height: 60vw;
-	}
+    .slider-image {
+        height: 60vw;
+    }
 
-	.first-dot {
-		margin-left: auto;
-	}
-	.last-dot {
-		margin-right: auto;
-	}
+    .first-dot {
+        margin-left: auto;
+    }
+
+    .last-dot {
+        margin-right: auto;
+    }
 }
