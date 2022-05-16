@@ -14,7 +14,7 @@ h1 {
 	margin-top: 0;
 	text-align: center;
 	font-size: 2vw;
-	color: #117b6c;
+	color: #004172bf;
 }
 
 .slider {
@@ -36,7 +36,7 @@ h1 {
 	overflow: hidden;
 	border-radius: 1%;
 	box-shadow: rgba(0, 0, 0, 0.4) 0px 2px 4px, rgba(0, 0, 0, 0.3) 0px 7px 13px -3px;
-}
+margin-bottom: 5%;}
 
 .slider__image {
 	display: block;
@@ -145,6 +145,10 @@ input[type="radio"]:checked + .label:hover * {
 		font-size: 3vw;
 	}
 
+    .slider__images {
+        margin-bottom: 5%;
+    }
+
 	.slider__info {
 		order: 3;
 		width: 100%;
@@ -153,8 +157,8 @@ input[type="radio"]:checked + .label:hover * {
 	}
 
 	.slider__text {
-		font-size: 3vw;
-		line-height: 3.5vw;
+		font-size: 2vw;
+		line-height: 2.5vw;
 	}
 
 	.label {
